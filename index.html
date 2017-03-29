@@ -35,18 +35,15 @@
     //是否是ios浏览器
     var isIos = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
     $('#openApp').click(function(){
-        if(isIos){
-            if(is_weixn()){
-                $(".shades").css({display:"block"})
-                $(".openHint").css({display:"block"})
-                applink() 
-            }
-            else{
-                applink() 
-            }
+        if(is_weixn()){
+            $(".shades").css({display:"block"})
+            $(".openHint").css({display:"block"})
+            applink() 
         }
-             
-        })           
+        else{
+            applink() 
+        }             
+    })           
     
     function is_weixn(){
         var ua = navigator.userAgent.toLowerCase();
