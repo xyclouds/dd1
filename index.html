@@ -12,42 +12,25 @@
     <div class="bg">
         <img src="images/download.png" alt="">
         <div id="download">
-            <a>IOS版下载</a></div>
+            <a href="https://itunes.apple.com/cn/app/%E6%98%93%E9%92%B1%E5%AE%9D/id1164008363?mt=8" id="openApp">IOS版下载</a>
+        </div>
     </div>
     <div class="shades"></div>
     <img class="openHint" src="images/safari.png" alt="">
 
 <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
 <script>
-    function applink(){
-        var ifr = document.createElement('iframe');
-        ifr.src = 'share://data/';
-        ifr.style.display = 'none' ;
-        document.body.appendChild(ifr);
-        window.setTimeout( function (){
-        document.body.removeChild(ifr);
-        },3000) 
-    }    
-    var u = navigator.userAgent;
-    var navAgentApp;
-    //是否是android浏览器
-    var isAndroid = u.indexOf('Android') > -1;
-    //是否是ios浏览器
-    var isIos = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
-    var msg = '';
-    if (isAndroid) {
-        applink()
-        //navAgentApp="share://data/";
-        $("#download a").attr("href","https://gg78live.oss-cn-hangzhou.aliyuncs.com/DownLoad/Android/%E8%83%96%E8%99%8E%E7%9B%B4%E6%92%AD1.1.0.apk")
-    }else if(isIos){
-        navAgentApp="i5i5820170101://enterRoom?";
-        $("#download a").attr("href","https://itunes.apple.com/app/id1192750817");
-        //downloadFather.href="https://itunes.apple.com/us/app/zhe-jiang-yi-dong-shou-ji/id898243566#weixin.qq.com';"//前往下载
-    }else{
-
-    }
-    
-
+    document.getElementById('openApp').onclick = function(e){  
+        // 通过iframe的方式试图打开APP，如果能正常打开，会直接切换到APP，并自动阻止a标签的默认行为  
+        // 否则打开a标签的href链接  
+        var ifr = document.createElement('iframe');  
+        ifr.src = 'com.baidu.tieba://';  
+        ifr.style.display = 'none';  
+        document.body.appendChild(ifr);  
+        window.setTimeout(function(){  
+            document.body.removeChild(ifr);  
+        },3000)  
+    }; 
 
     function is_weixn(){
         var ua = navigator.userAgent.toLowerCase();
