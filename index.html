@@ -1,38 +1,53 @@
 <!DOCTYPE html>
 <!-- saved from url=(0032)https://jakea123.github.io/tyui/ -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
-    <title>下载页面</title>
-    <link rel="stylesheet" type="text/css" href="css/base.css">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
-    <link rel="stylesheet" type="text/css" href="css/jNotify.css">
+	
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+	<title>下载页面</title>
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/jNotify.css">
 </head>
 <body>
-    <div class="bg">
-        <img src="images/download.png" alt="">
-        <div id="download">
-            <a href="https://itunes.apple.com/cn/app/%E6%98%93%E9%92%B1%E5%AE%9D/id1164008363?mt=8" id="openApp">IOS版下载</a>
+	<div class="bg">
+		<img src="images/download.png" alt="">
+	    <div id="download">
+	    	<a href="https://itunes.apple.com/cn/app/%E6%98%93%E9%92%B1%E5%AE%9D/id1164008363?mt=8">IOS版下载</a>
         </div>
-    </div>
-    <div class="shades"></div>
+	</div>
+	<div class="shades"></div>
     <img class="openHint" src="images/safari.png" alt="">
 
 <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
 <script>
-    document.getElementById('openApp').onclick = function(e){  
-        // 通过iframe的方式试图打开APP，如果能正常打开，会直接切换到APP，并自动阻止a标签的默认行为  
-        // 否则打开a标签的href链接  
-        var ifr = document.createElement('iframe');  
-        ifr.src = 'com.baidu.tieba://';  
-        ifr.style.display = 'none';  
-        document.body.appendChild(ifr);  
-        window.setTimeout(function(){  
-            document.body.removeChild(ifr);  
-        },3000)  
-    }; 
+    var url = {
+        open: 'eqianbao://',
+        down: 'https://itunes.apple.com/cn/app/%E6%98%93%E9%92%B1%E5%AE%9D/id1164008363?mt=8'
+    };
+    var iframe = document.createElement('iframe');
+    var body = document.body;
+    iframe.style.cssText='display:none;width=0;height=0';
+    var timer = null;
 
-    function is_weixn(){
+    // 立即打开的按钮
+    var openapp = document.getElementById('openapp');
+    openapp.addEventListener('click', function() {
+      if(is_weixin) {
+        $(".shades").css({display:"block"})
+        $(".openHint").css({display:"block"})
+        // 引导用户在浏览器中打开
+      }) else{
+        body.appendChild(iframe);
+        iframe.src = url.open;
+        timer = setTimeout(function() {
+          wondow.location.href = url.down;
+        }, 500);
+      }
+    }, false)
+	
+
+
+    function is_weixin(){
         var ua = navigator.userAgent.toLowerCase();
         if(ua.match(/MicroMessenger/i)=="micromessenger") {
             return true;
@@ -43,5 +58,4 @@
 
     
 </script>
-</body>
-</html>
+</body></html>
