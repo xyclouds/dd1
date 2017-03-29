@@ -20,17 +20,36 @@
 
 <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
 <script>
-   document.getElementById('openApp').onclick = function(e){  
+   document.getElementById('openApp').onclick = function(e){
+    applink();
+       if(is_weixn()){
+            $(".shades").css({display:"block"})
+            $(".openHint").css({display:"block"})
+        }else{
+            $(".shades").css({display:"none"})
+            $(".openHint").css({display:"none"})
+        }
+   })  
         // 通过iframe的方式试图打开APP，如果能正常打开，会直接切换到APP，并自动阻止a标签的默认行为  
         // 否则打开a标签的href链接  
+
+    function applink(){
         var ifr = document.createElement('iframe');  
         ifr.src = 'eqianbao://';  
         ifr.style.display = 'none';  
         document.body.appendChild(ifr);  
         window.setTimeout(function(){  
             document.body.removeChild(ifr);  
-        },3000)  
-    };  
+        },3000)   
+    }
     
+    function is_weixn(){
+        var ua = navigator.userAgent.toLowerCase();
+        if(ua.match(/MicroMessenger/i)=="micromessenger") {
+            return true;
+        } else {
+            return false;
+        }
+    }
 </script>
 </body></html>
