@@ -20,42 +20,17 @@
 
 <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
 <script>
-    var url = {
-        open: 'eqianbao://',
-        down: 'https://itunes.apple.com/cn/app/%E6%98%93%E9%92%B1%E5%AE%9D/id1164008363?mt=8'
-    };
-    var iframe = document.createElement('iframe');
-    var body = document.body;
-    iframe.style.cssText='display:none;width=0;height=0';
-    var timer = null;
-
-    // 立即打开的按钮
-    var openapp = document.getElementById('openapp');
-    openapp.addEventListener('click', function() {
-      if(is_weixin) {
-        /*$(".shades").css({display:"block"})
-        $(".openHint").css({display:"block"})*/
-        // 引导用户在浏览器中打开
-      } else{
-        body.appendChild(iframe);
-        iframe.src = url.open;
-        timer = setTimeout(function() {
-          wondow.location.href = url.down;
-        }, 500);
-      }
-    }, false)
-	
-
-
-    function is_weixin(){
-        var ua = navigator.userAgent.toLowerCase();
-        if(ua.match(/MicroMessenger/i)=="micromessenger") {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
+   document.getElementById('openApp').onclick = function(e){  
+        // 通过iframe的方式试图打开APP，如果能正常打开，会直接切换到APP，并自动阻止a标签的默认行为  
+        // 否则打开a标签的href链接  
+        var ifr = document.createElement('iframe');  
+        ifr.src = 'eqianbao://';  
+        ifr.style.display = 'none';  
+        document.body.appendChild(ifr);  
+        window.setTimeout(function(){  
+            document.body.removeChild(ifr);  
+        },3000)  
+    };  
     
 </script>
 </body></html>
