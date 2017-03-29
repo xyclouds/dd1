@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <!-- saved from url=(0032)https://jakea123.github.io/tyui/ -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	
-	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
-	<title>下载页面</title>
-	<link rel="stylesheet" type="text/css" href="css/base.css">
-	<link rel="stylesheet" type="text/css" href="css/index.css">
-	<link rel="stylesheet" type="text/css" href="css/jNotify.css">
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>下载页面</title>
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/jNotify.css">
 </head>
 <body>
-	<div class="bg">
-		<img src="images/download.png" alt="">
-	    <div id="download">
-	    	<a>IOS版下载</a></div>
-	</div>
-	<div class="shades"></div>
+    <div class="bg">
+        <img src="images/download.png" alt="">
+        <div id="download">
+            <a>IOS版下载</a></div>
+    </div>
+    <div class="shades"></div>
     <img class="openHint" src="images/safari.png" alt="">
 
 <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
@@ -38,16 +38,15 @@
     if (isAndroid) {
         applink()
         //navAgentApp="share://data/";
-        $(".downLoadapps").attr("href","https://gg78live.oss-cn-hangzhou.aliyuncs.com/DownLoad/Android/%E8%83%96%E8%99%8E%E7%9B%B4%E6%92%AD1.1.0.apk")
+        $("#download a").attr("href","https://gg78live.oss-cn-hangzhou.aliyuncs.com/DownLoad/Android/%E8%83%96%E8%99%8E%E7%9B%B4%E6%92%AD1.1.0.apk")
     }else if(isIos){
         navAgentApp="i5i5820170101://enterRoom?";
-        $(".downLoadapps").attr("href","https://itunes.apple.com/app/id1192750817");
-        $(".topLogo").css({display:"none"})
+        $("#download a").attr("href","https://itunes.apple.com/app/id1192750817");
         //downloadFather.href="https://itunes.apple.com/us/app/zhe-jiang-yi-dong-shou-ji/id898243566#weixin.qq.com';"//前往下载
     }else{
 
     }
-	
+    
 
 
     function is_weixn(){
@@ -61,4 +60,5 @@
 
     
 </script>
-</body></html>
+</body>
+</html>
