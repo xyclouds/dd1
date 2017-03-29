@@ -34,17 +34,18 @@
     var u = navigator.userAgent;
     //是否是ios浏览器
     var isIos = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
-    $('#openApp').click(function(){
-        if(is_weixn()){
-            $(".shades").css({display:"block"})
-            $(".openHint").css({display:"block"})
-            applink() 
-        }
-        else{
-            applink() 
-        }             
-    })           
-    
+
+        $("#openapp").click(function(){
+            //alert(222222222222);
+            //console.log(is_weixn())
+            if(is_weixn()){
+               $(".shades").css({display:"block"});
+               $(".openHint").css({display:"block"});
+               applink()
+            }else{
+                applink()
+            }
+        })          
     function is_weixn(){
         var ua = navigator.userAgent.toLowerCase();
         if(ua.match(/MicroMessenger/i)=="micromessenger") {
