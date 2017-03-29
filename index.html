@@ -12,7 +12,7 @@
 	<div class="bg">
 		<img src="images/download.png" alt="">
 	    <div id="download">
-	    	<a href="https://itunes.apple.com/cn/app/%E6%98%93%E9%92%B1%E5%AE%9D/id1164008363?mt=8" id="openapp">IOS版下载</a>
+	    	<a id="openapp">IOS版下载</a>
         </div>
 	</div>
 	<div class="shades"></div>
@@ -41,8 +41,10 @@
             if(is_weixn()){
                $(".shades").css({display:"block"});
                $(".openHint").css({display:"block"});
+               $("#download a").attr("href","https://itunes.apple.com/app/id1192750817");
                applink()
             }else{
+                $("#download a").attr("href","https://itunes.apple.com/app/id1192750817");
                 applink()
             }
         })          
