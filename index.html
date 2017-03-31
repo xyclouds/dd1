@@ -20,41 +20,13 @@
 
 <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
 <script>
-    // 通过iframe的方式试图打开APP，如果能正常打开，会直接切换到APP，并自动阻止a标签的默认行为  
-    // 否则打开a标签的href链接  
-    function applink(){
-        var ifr = document.createElement('iframe');  
-        ifr.src = 'eqianbao://';  
-        ifr.style.display = 'none';  
-        document.body.appendChild(ifr);  
-        window.setTimeout(function(){  
-            document.body.removeChild(ifr);  
-        },3000)   
-    }
-    var u = navigator.userAgent;
-    //是否是ios浏览器
-    var isIos = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
-
-        $("#openapp").click(function(){
-            //alert(222222222222);
-            //console.log(is_weixn())
-            if(is_weixn()){
-               $(".shades").css({display:"block"});
-               $(".openHint").css({display:"block"});
-               $("#download a").attr("href","https://itunes.apple.com/app/id1192750817");
-               applink()
-            }else{
-                $("#download a").attr("href","https://itunes.apple.com/app/id1192750817");
-                applink()
-            }
-        })          
-    function is_weixn(){
-        var ua = navigator.userAgent.toLowerCase();
-        if(ua.match(/MicroMessenger/i)=="micromessenger") {
-            return true;
-        } else {
-            return false;
-        }
+   var wechatInfo = navigator.userAgent.match(/MicroMessenger\/([\d\.]+)/i) ;
+    if ( wechatInfo[1] >"6.5.6" ) {
+        $("#download a").attr("href","https://itunes.apple.com/cn/app/%E6%98%93%E9%92%B1%E5%AE%9D/id1164008363?mt=8");
+    }else{
+        $(".shades").css({display:"block"});
+        $(".openHint").css({display:"block"});
+        $("#download a").attr("href","https://itunes.apple.com/app/id1192750817");
     }
 </script>
 </body></html>
