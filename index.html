@@ -21,7 +21,7 @@
 <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
 <script>
    var wechatInfo = navigator.userAgent.match(/MicroMessenger\/([\d\.]+)/i) ;
-    if ( wechatInfo[1] >"6.5.6" ) {
+    if ( wechatInfo[1] >"6.5.5" ) {
         $("#download a").attr("href","https://itunes.apple.com/cn/app/%E6%98%93%E9%92%B1%E5%AE%9D/id1164008363?mt=8");
     }else{
         $(".shades").css({display:"block"});
