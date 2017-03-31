@@ -1,7 +1,10 @@
+*{
+	box-sizing:border-box;
+}
 html,body{
 	width: 100%;
 	height: 100%;
-	background: #3C8EFC;
+	background: #f1f1f1;
 }
 @media screen and (max-width: 1190px) {
   html {
@@ -50,247 +53,344 @@ html,body{
 @media screen and (max-width: 320px) {
   html {
     font-size: 42.66667px; } }
+
+/* 字体图标 */
+.icon {
+   width: 0.8rem; 
+   height: 0.8rem;
+   vertical-align: middle;
+   fill: currentColor;
+   overflow: hidden;
+   color: #00b7ee;
+   padding: 0.15rem;
+}
 .lf{
-	float: left;
+  float: left;
 }
 .rf{
-	float: right;
+  float: right;
 }
-input:-webkit-autofill{
-	background: #fff!important;
+/* 功能介绍 */
+.main{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+  }
+.main img{
+    width: 100%;  
+} 
+#introdution .main .qrcode{
+    width:2.1rem;
+    height: 2.1rem;
+    border-radius:0.08rem; 
+    position:absolute; 
+    left: 50%;  
+    bottom: 1.52rem;
+    overflow: hidden;
+    transform: translateX(-50%);
+
 }
-/* 生成二维码页面 */
-.qrtitle{
-	width: 6.38rem;
-	height: 3.56rem;
-	margin: 0.2rem auto;
+#introdution .qrcode img{
+  width: 100%;
+  height: 100%;
+
 }
-.qrtitle img{
+/* 新手入门 */
+#getStart p{
+  width: 100%;
+  height: 0.8rem;
+  color: #383838;
+  font-size: 0.24rem;
+  font-family: "苹方细体";
+  padding-left: .2rem;
+  padding-right: .2rem;
+  line-height: 1rem;
+}
+#getStart .hotques{
+  background: #fff;
+  padding-left: .2rem;
+  padding-right: .2rem;
+}
+.hotques a{
+  display: block;
+  width: 7.1rem;
+  height: 1rem;
+  color: #383838;
+  border-bottom: 2px solid #f1f1f1;
+  line-height: 1rem;
+}
+#getStart .hotques a:nth-last-child(1){
+  border-bottom: none;
+}
+.hotques a i{
+  font-size: 0.32rem;
+  font-family: "苹方中等";
+  font-style: normal;
+  color: #383838;
+}
+.hotques a span{
+  width: 0.32rem;
+  height: 0.6rem;
+  margin-top: 0.2rem;
+}
+.hotques a span img{
+  width: 100%;
+  height: 100%;
+}
+/* question1 */
+.backTwo{
+  display: block;
+  width: 0.6rem;
+  height: 0.48rem;
+  margin: 0.2rem;
+}
+.backTwo img{
+  width: 100%;
+  height: 100%;
+}
+#question h3{
+   width: 7.1rem;
+   height: 0.7rem;
+   margin: 0 auto;
+   color: #383838;
+   line-height: 0.7rem;
+   border-bottom: 2px solid #f1f1f1;
+   text-align: center;
+   font-family: "苹方粗体";
+   font-size: 0.32rem;
+   letter-spacing: 0.03rem;
+
+}
+.quesText{
+  width: 100%;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+}
+.quesText p,.quesText pre{
+  font-size: 0.28rem;
+  font-family: "苹方粗体";
+  margin-bottom: 0.2rem;
+  line-height: 1.6em;
+  letter-spacing: 0.02rem;
+}
+.quesText p:nth-child(1){
+  margin-top: 0.4rem;
+}
+.quesText p:nth-last-child(1){
+  margin-bottom: 0.4rem;
+}
+/*  */
+.reg-contain{
+  width: 100%;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 50px;
+  background: #f1f1f1;
+  margin-top: 50px;
+  height: 100%;
+}
+#form .item{
 	width: 100%;
-	height: 100%;
+	background: #fff;
+	height: 0.8rem;
+	margin-bottom: 1px;
+	border-radius: 8px;
 }
-.qrcontain{
-	width: 2.8rem;
-	height: 2.8rem;
-	margin: 0 auto;
+#form .item input{
+	width: calc(100% - 0.9rem);
+	height: 0.76rem;
+	border: none;
+	font-size: 0.22rem;
+	font-family: "苹方";
+	padding-top: 0.08rem;
+	padding-bottom: 0.08rem;
+	vertical-align: middle;
+}
+#form .item:nth-child(5){
+  margin-top: 10px;
+}
+#form select{
+	width: 100%;
+	height: 0.8rem;
+	border:1px solid #00b7ee;
+	border-radius: 8px;
+	font-size: 0.22rem;
+  margin-top: 5px;
+}
+.reg-contain .reg-submit{
+	width: 6.1rem;
+  height: 0.8rem;
+  border-radius: 40px;
+  text-align: center;
+  line-height: 0.8rem;
+  color: #fff;
+  background: #00b7ee;
+  margin: 0 auto;
+  margin-top: 72px;
+  font-size: 0.3rem;
+  font-family: "苹方";
+}
+.reg-contain .card-submit{
+  width: 6.1rem;
+  height: 0.8rem;
+  border-radius: 40px;
+  text-align: center;
+  line-height: 0.8rem;
+  color: #fff;
+  background: #00b7ee;
+  margin: 0 auto;
+  margin-top: 76px;
+  font-size: 0.3rem;
+  font-family: "苹方";
+}
+/* invitation 邀请好友 */
+.nav{
+  width: 100%;
+  height: 0.88rem;
+  background: #1b1b1b;
+}
+.nav-title{
+  width: 5.9rem;
+  height: 100%;
+  font-size: 0.32rem;
+  color: #fff;
+  text-align: center;
+  line-height: 0.88rem;
+  margin: 0 auto;
+  font-family: "苹方常规";
+}
+.lf{
+  float: left;
+}
+#return{
+  width: 0.4rem;
+  height: 0.4rem;
+  text-align: center;
+  line-height: 0.4rem;
+  color: #fff;
+  margin: 0.2rem;
+}
+#return img{
+  width: 0.27rem;
+  height: 0.48rem;
+}
+.title{
+  width: 6.38rem;
+  height: 3.56rem;
+  margin: 0.2rem auto;
+}
+.title img{
+  width: 100%;
+  height: 100%;
+}
+.contain{
+  width: 2.8rem;
+  height: 2.8rem;
+  margin: 0 auto;
     background: #1D7DFF;
     border-radius: 0.1rem;
     position: relative;
 }
 .erweima{
-	width: 2.6rem;
-	height: 2.6rem;
-	margin: auto;
-    border-radius: 0.1rem;
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    overflow: hidden;
+  width: 2.6rem;
+  height: 2.6rem;
+  margin: auto;
+  border-radius: 0.1rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
 }
 .erweima img{
-	width: 100%;
-	height: 100%;
+  width: 100%;
+  height: 100%;
 }
 .explain{
-	width: 4.6rem;
-	color: #fff;
-	margin: 0.2rem auto 0.9rem;
-	font-size: 0.24rem;
+  width: 3.6rem;
+  color: #fff;
+  margin: 0.2rem auto 0.9rem;
+  font-size: 0.24rem;
 }
 .partner{
-	width: 2.8rem;
-	height: 0.9rem;
-	margin: 0 auto;
-	padding-left: 0.2rem;
+  width: 4rem;
+  height: 0.9rem;
+  margin: 0 auto;
+  padding-left: 0.2rem;
 }
 .partner img{
-	width: 0.9rem;
-	height: 0.9rem;
+  width: 0.9rem;
+  height: 0.9rem;
 }
 .partner ul{
-	width: 2.6rem;
-	font-family: "苹方常规";
-	color:#fff;
-	margin-left: 0.2rem;
-	float: left;
+  width: 2.6rem;
+  font-family: "苹方常规";
+  color:#fff;
+  margin-left: 0.2rem;
+  float: left;
 }
 .partner ul li{
-	height: 0.45rem;
-	line-height: 0.45rem;
-	font-size: 0.26rem;
+  height: 0.45rem;
+  line-height: 0.45rem;
+  font-size: 0.26rem;
 }
 .partner ul li span{
-	font-size: 0.32rem;
+  font-size: 0.32rem;
 }
 .estyle{
-	width: 4rem;
-	height: 0.47rem;
-	margin: 0 auto;
+  width: 4rem;
+  height: 0.47rem;
+  margin: 0 auto;
 }
 .estyle img{
-	width: 100%;
-	height: 100%;
-	margin-top: 0.6rem;
-}
-/* 注册页面 */
-.input_bar{
   width: 100%;
-  height: auto;
-  margin-top: 0.7rem;
-
+  height: 100%;
+  margin-top: 0.6rem;
 }
-.input_bar .input_row{
-	width: 100%;
-	height: 0.98rem;
-	padding-left: 0.2rem;
-	padding-right: 0.2rem;
-	border-top: 1px solid #f1f1f1;
-}
-.addborder{
-	border-bottom: 1px solid #f1f1f1;
-}
-.input_bar .input_row .text_l{
-	border: none;
-	width: 6.9rem;
-	padding: 0px 0px 0px 3%;
-	margin: 0px;
-	height:0.96rem;
-	font-size: 0.32rem;
-	line-height: auto;
-	-webkit-border-radius: 0.08rem;
-	border-radius: 0.08rem;
-}
-.input_bar .text_s{
-	border: none;
-	width: 46%;
-	height: 0.96rem;
-	margin: 0px;
-	padding: 0 0px 0px 3%;
-	line-height: auto;
-	font-size: 0.32rem;
-	-webkit-border-radius: 0.08rem;
-	border-radius: 0.08rem;
-}
-.input_bar .btn_s{
-	width: 1.8rem;
-	height: 0.5rem;
-	background: #00B7EE;
-	text-align: center;
-	line-height: 0.5rem;
-	color: #fff;
-	font-family: "苹方";
-	font-size: 0.28rem;
-	border-radius: 0.25rem;
-	border: none;
-	margin: 0.24rem 0.5rem 0 0;
-}
-.input_bar .info_row{
-	margin: 0px;
-	padding: 0.5rem 0px 0.5rem;
-	display: block;
-	overflow: hidden;
-	text-align: center;
-	font-size: 0.28rem;
-	color: black;
-}
-.input_bar .btn_row{
-	width: 6.5rem;
-	margin: 0 auto 0;
-	overflow: hidden;
-}
-.input_bar .btn_l{
-	border: none;
-	width: 100%;
-	margin: 0.12rem 0px 0.38rem 0px;
-	padding: 0px 0px 0px 0px;
-	text-align: center;
-	height: 0.8rem;
-	line-height: 0.8rem;
-	font-size: 0.32rem;
-	-webkit-border-radius: 0.4rem;
-	border-radius: 0.4rem;
-}
-.input_bar .primary{
-	background: #00B7EE;
-	color: white;
-}
-/* 注册成功后跳转页面 */
-.reglogo{
-    width:1.42rem;
-    height:1.42rem;
-    margin: 0.7rem auto;   
-}
-.reglogo img{
-	width: 100%;
-}
-.phone_w .content p{
-	font-size:0.36rem;
-    margin: 0.5rem auto;
-    color: #383838;
-    text-align: center;
-}
-/*按钮*/
-.resiter-btn{
-	width: 6.5rem;
-	height:0.8rem;
-	margin: 0.2rem auto;
-	
-}
-.btn-next-red{
-    display:block;
-    width:6.5rem;
-    height:0.8rem;
-    margin: 0.8rem auto;
-    background:#1D98D6 ;
-    text-align: center;
-    line-height:0.8rem;
-    border-radius:0.4rem;
-    -moz-border-radius:0.4rem; /* Old Firefox */
-    color:#fff;
-    font-size:0.36rem;
-    }
 /* 下载页面 */
 .bg{
-	width: 100%;
-	height: 100%;
+  width: 100%;
+  height: 100%;
 }
 .bg img{
-	width: 100%;
-	height: 100%;
-	display: block!important;
+  width: 100%;
+  height: 100%;
 }
 #download a{
-   width: 3.2rem;
-   height: 1.02rem;
-   border: 2px solid #BBE7F5;
-   border-radius: 0.08rem;
+   width: 6rem;
+   height: 0.8rem;
+   background: #00c5ff;
+   border-radius: 0.1rem;
    color: #fff;
    font-size: 0.38rem;
    text-align: center;
-   line-height: 1.02rem;
-   font-family: "苹方特粗";
+   line-height: 0.8rem;
+   font-family: "苹方粗体";
    position: absolute;
-   bottom: 11%;
+   bottom: 13%;
    left: 50%;
-   margin-left: -1.6rem;
+   margin-left: -3rem;
+   letter-spacing: 0.03em;
 
 }
 .openHint{
-    width:5.7rem;
-    height: 3.5rem;
-    position: absolute;
-    top: 0;
-    right: 0.6rem;
-    display: none;
+  width:5.7rem;
+  height: 3.5rem;
+  position: absolute;
+  top: 0;
+  right: 0.6rem;
+  z-index: 9999;
+  display: none;
 }
 .shades{
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.5);
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: none;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: none;
 }
